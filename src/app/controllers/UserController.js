@@ -36,7 +36,7 @@ class UserController {
       admin,
     });
 
-    return response.status(201).json({ id: user.id, name, emailJ, admin });
+    return response.status(201).json({ id: user.id, name, email, admin });
   }
 }
 
