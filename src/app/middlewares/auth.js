@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 import authConfig from "../../config/auth";
 
-export default (request, response, next) => {
-  const authToken = request.headers.authorization;
+export default async (request, response, next) => {
+  const authToken = await request.headers.authorization;
 
   if (!authToken) {
     return response.status(401).json({ error: "Token not provided" });
@@ -15,8 +15,7 @@ export default (request, response, next) => {
         throw new Error();
       }
       request.userId = decoded.id;
-
-      return next();
+      request.userName = decoded.name;
     });
   } catch (error) {
     return response.status(401).json({ error: "Token is invalid" });
