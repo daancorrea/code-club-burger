@@ -83,7 +83,7 @@ class ProductController {
     }
     const { name, price, category_id, offer } = request.body;
 
-    const product = await Product.update(
+    const productUpdated = await Product.update(
       {
         name,
         price,
@@ -96,7 +96,7 @@ class ProductController {
       }
     );
 
-    return response.status(201).json(product);
+    return response.status(201).json(productUpdated);
   }
 }
 
