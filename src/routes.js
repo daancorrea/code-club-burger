@@ -12,6 +12,10 @@ import OrderController from "./app/controllers/OrderController";
 const upload = multer(multerConfig);
 const routes = new Router();
 
+routes.get("/", (req, res) => {
+    return res.json({ welcome: "Hello! You are welcome at a CodeBurger API" })
+})
+
 routes.post("/users", UserController.store);
 
 routes.post("/session", SessionController.store);
