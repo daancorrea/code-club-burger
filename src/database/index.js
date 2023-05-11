@@ -5,7 +5,6 @@ import product from "../app/models/Product";
 import user from "../app/models/User";
 import category from "../app/models/Category";
 
-//import configDatabase from "../config/database";
 import mongoose from "mongoose";
 
 const models = [user, product, category];
