@@ -8,8 +8,8 @@ import category from "../app/models/Category";
 import mongoose from "mongoose";
 
 const models = [user, product, category];
-const postgressUrl = process.env.DATABASE_URL;
-const mongoUrl = process.env.MONGO_URL;
+const postgressUrl = 'postgresql://postgres:4jQoq8mNEPYlLtnJ0W42@containers-us-west-66.railway.app:6069/railway'
+const mongoUrl = 'mongodb://mongo:AQ19vibJwwXLkFHZA9r8@containers-us-west-152.railway.app:7754'
 
 class Database {
   constructor() {
