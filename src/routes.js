@@ -16,22 +16,22 @@ routes.get("/", (req, res) => {
     return res.json({ welcome: "Hello! You are welcome at a CodeBurger API" })
 })
 
-routes.post("/users", UserController.store);
+routes.post("/users", UserController.store); // ok
 
-routes.post("/session", SessionController.store);
+routes.post("/session", SessionController.store); // ok
 
 routes.use(authMiddleware);
 
-routes.post("/products", upload.single("file"), ProductController.store);
-routes.get("/products", ProductController.index);
-routes.put("/products/:id", upload.single("file"), ProductController.update);
+routes.post("/products", upload.single("file"), ProductController.store); // ok
+routes.get("/products", ProductController.index); //ok
+routes.put("/products/:id", upload.single("file"), ProductController.update); // ok
 
-routes.post("/categories", upload.single("file"), CategoryController.store);
-routes.get("/categories", CategoryController.index);
-routes.put("/categories/:id", upload.single("file"), CategoryController.update);
+routes.post("/categories", upload.single("file"), CategoryController.store); // ok
+routes.get("/categories", CategoryController.index); // ok
+routes.put("/categories/:id", upload.single("file"), CategoryController.update); 
 
-routes.post("/orders", OrderController.store);
-routes.get("/orders", OrderController.index);
-routes.put("/orders/:id", OrderController.update);
+routes.post("/orders", OrderController.store); // ok
+routes.get("/orders", OrderController.index); // ok
+routes.put("/orders/:id", OrderController.update); // ok
 
 export default routes;

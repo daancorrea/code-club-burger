@@ -1,9 +1,9 @@
 module.exports = {
   dialect: "postgres",
-  host: process.env.PGHOST || "localhost",
-  username: process.env.PGUSER || "postgres",
-  password:  process.env.PGPASSWORD || "postgres",
-  database:  process.env.PGDATABASE || "codeburger",
+  host: process.env.PGHOST,
+  username: process.env.PGUSER,
+  password:  process.env.PGPASSWORD,
+  database:  process.env.PGDATABASE,
   define: {
     timestamps: true,
     underscored: true,
