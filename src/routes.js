@@ -20,18 +20,18 @@ routes.post("/users", UserController.store); // ok
 
 routes.post("/session", SessionController.store); // ok
 
-routes.use(authMiddleware);
+// routes.use(authMiddleware);
 
-routes.post("/products", upload.single("file"), ProductController.store); // ok
-routes.get("/products", ProductController.index); //ok
-routes.put("/products/:id", upload.single("file"), ProductController.update); // ok
+routes.post("/products", authMiddleware,upload.single("file"), ProductController.store); // ok
+routes.get("/products", authMiddleware,ProductController.index); //ok
+routes.put("/products/:id",  authMiddleware,upload.single("file"), ProductController.update); // ok
 
-routes.post("/categories", upload.single("file"), CategoryController.store); // ok
-routes.get("/categories", CategoryController.index); // ok
+routes.post("/categories", authMiddleware, upload.single("file"), CategoryController.store); // ok
+routes.get("/categories", authMiddleware, CategoryController.index); // ok
 routes.put("/categories/:id", upload.single("file"), CategoryController.update); 
 
-routes.post("/orders", OrderController.store); // ok
-routes.get("/orders", OrderController.index); // ok
-routes.put("/orders/:id", OrderController.update); // ok
+routes.post("/orders", authMiddleware, OrderController.store); // ok
+routes.get("/orders", authMiddleware, OrderController.index); // ok
+routes.put("/orders/:id", authMiddleware, OrderController.update); // ok
 
 export default routes;
